@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+
+</head>
+
+
+<body>
+    <button id ="gerador" onclick = "alertaUsuario()"> Gerar Array </button>
+
+    <script>
+        function alertaUsuario() {
+            alert("Valores apresentado no console!");
+        }
+
+        $("#gerador").click(function () {
+            $.ajax({
+
+                url: "https://server-node-example.herokuapp.com/promotios-hub",
+                dataType: "json",
+                type: "GET",
+
+            }).done(function (objetos) {
+
+                console.log(objetos);
+
+            })
+        });
+    </script>
+
+</body>
+
+</html>
